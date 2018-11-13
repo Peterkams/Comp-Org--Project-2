@@ -59,6 +59,10 @@ dont_count_space:
 	jr $ra
 dont_print_too_long:
 
+	bne $t5, $zero, dont_print_empty_string_error	#if user input is empty, and
+	beq $t1, $t6, dont_print_empty_string_error     #if user input is a newline print invalid
+
+dont_print_empty_string_error:
 
 
 
