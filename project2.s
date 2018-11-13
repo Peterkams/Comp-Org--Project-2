@@ -28,6 +28,10 @@ loop:
 	beq $t5, $0, dont_print_invalid_spaces		#if the num of previously seen characters is not zero and
 	beq $t1, $0, dont_print_invalid_spaces		#if the chLaracter is not null and 
 	beq $t1, $t6, dont_print_invalid_spaces		#if the character is not new line then print invalid 	
+	li $v0, 4
+	la $a0, invalid_spaces
+	syscall		#print invalid spaces
+	jr $ra	
 
 dont_print_invalid_spaces:
 	
