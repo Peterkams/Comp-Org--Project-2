@@ -90,6 +90,12 @@ convert_next_digit_loop:
 	addi $t8, $s1, -55 	#got the decimal value of the capital letter
 dont_convert_capital_letter_to_digit:
 
+	li $t2, 97	#smallest ascii value for lowercase letters
+	li $t3, 122	#biggest ascii value for lowercase letters
+
+	blt $s1, $t2, dont_convert_lowercase_letter_to_digit 	#if ascii[j] >= 97 and
+	bgt $s1, $t3, dont_convert_lowercase_letter_to_digit     #if ascii[j] <= 122
+
 
 
 	jr $ra	
