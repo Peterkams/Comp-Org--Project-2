@@ -17,7 +17,8 @@ main:
 	li $t3, 32 	#loaded space here
 	li $s0, 0	#initialized previous character to 0
 	li $t5, 0	#initialized num_of_chracters
-
+	li $t6, 0x0A	#loaded new line here
+	li $t7, 0	#number of spaces in front( used for during calculation)
 
 	
 	jr $ra
