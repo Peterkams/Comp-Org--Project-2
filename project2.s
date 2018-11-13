@@ -38,5 +38,13 @@ dont_print_invalid_spaces:
 	beq $t1, $t3, dont_incr_num_of_characters	#if character is not equal to a space, increment num_of_characters
 	addi $t5, $t5, 1
 dont_incr_num_of_characters:
-	
+
+	bne $t1, $t3, dont_count_space		#if current character is a space and
+	bne $t5, $0, dont_count_space		#if num of previous character is equal to 0 then count space
+	addi $t7, $t7, 1
+dont_count_space:
+
+
+
+
 	jr $ra
