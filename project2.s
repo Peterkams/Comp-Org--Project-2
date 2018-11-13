@@ -32,7 +32,6 @@ loop:
 	la $a0, invalid_spaces
 	syscall		#print invalid spaces
 	jr $ra	
-
 dont_print_invalid_spaces:
 
 	beq $t1, $t3, dont_incr_num_of_characters	#if character is not equal to a space, increment num_of_characters
