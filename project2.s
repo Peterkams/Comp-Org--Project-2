@@ -107,4 +107,10 @@ dont_convert_lowercase_letter_to_digit:
 dont_convert_digit_to_digit:
 
 
+
+	mul $s2, $t8, $t4 	#value = digit * power_of_36
+	mul $t4, $t4, $s3	#power_of_base *= 36
+	add $t9, $t9, $s2	#sum+= value
+
+
 	jr $ra	
