@@ -79,6 +79,11 @@ dont_print_empty_string_error:
 	li $t9, 0	#initialized sum of decimal value
 	li $s3, 36	#constant of 36
 
+convert_next_digit_loop:
+
+	lb $s1, 0($s0)	
+	li $t2, 65	#smallest ascii value for capital letters
+	li $t3, 90	#biggest ascii value for capital letters
 
 
 
