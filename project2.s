@@ -74,6 +74,12 @@ dont_print_empty_string_error:
 	addi $t1, $t5, -1	#initialized j(length-1)
 	la $s0, my_string	#got the string address
 	add $s0, $s0, $t7	#got the address of the start of the number
+	add $s0,$s0, $t1	#add length -1 to the address(starts from the end)
+	li $t4, 1 	#initialized power of 36
+	li $t9, 0	#initialized sum of decimal value
+	li $s3, 36	#constant of 36
 
 
-	jr $ra
+
+
+	jr $ra	
