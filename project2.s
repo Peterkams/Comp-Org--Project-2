@@ -25,5 +25,10 @@ loop:
 
 	beq $t1, $t3, dont_print_invalid_spaces		#if the character is not a space and
 	bne $s0, $t3, dont_print_invalid_spaces		#if the previous character is a space and
+	beq $t5, $0, dont_print_invalid_spaces		#if the num of previously seen characters is not zero and
+	beq $t1, $0, dont_print_invalid_spaces		#if the chLaracter is not null and 
+	beq $t1, $t6, dont_print_invalid_spaces		#if the character is not new line then print invalid 	
+
+dont_print_invalid_spaces:
 	
 	jr $ra
