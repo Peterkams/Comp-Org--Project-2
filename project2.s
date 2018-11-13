@@ -113,4 +113,11 @@ dont_convert_digit_to_digit:
 	add $t9, $t9, $s2	#sum+= value
 
 
+	addi $t0, $t0, 1	#incremented i
+	addi $t1, $t1, -1	#decremented j
+	addi $s0, $s0, -1	#incremented the address to get the next character
+	blt $t0, $t5, convert_next_digit_loop
+
+
+
 	jr $ra	
