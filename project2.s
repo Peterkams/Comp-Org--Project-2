@@ -53,7 +53,10 @@ dont_count_space:
 
 	li $t1, 4
 	ble $t5, $t1, dont_print_too_long 	#checks if user input is greater than 4
-
+	li $v0, 4
+	la $a0, too_long
+	syscall		#printed too long error for the input
+	jr $ra
 dont_print_too_long:
 
 
