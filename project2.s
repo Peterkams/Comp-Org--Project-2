@@ -68,5 +68,12 @@ dont_print_too_long:
 dont_print_empty_string_error:
 
 
+#about to overwrite all the registers apart from $t5- len(numofcharacters and $t7- numofspaces in front)
+
+	li $t0, 0	#initialized i here
+	addi $t1, $t5, -1	#initialized j(length-1)
+	la $s0, my_string	#got the string address
+	add $s0, $s0, $t7	#got the address of the start of the number
+
 
 	jr $ra
