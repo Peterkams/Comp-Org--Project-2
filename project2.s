@@ -34,5 +34,9 @@ loop:
 	jr $ra	
 
 dont_print_invalid_spaces:
+
+	beq $t1, $t3, dont_incr_num_of_characters	#if character is not equal to a space, increment num_of_characters
+	addi $t5, $t5, 1
+dont_incr_num_of_characters:
 	
 	jr $ra
