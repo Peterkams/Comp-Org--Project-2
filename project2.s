@@ -118,6 +118,10 @@ dont_convert_digit_to_digit:
 	addi $s0, $s0, -1	#incremented the address to get the next character
 	blt $t0, $t5, convert_next_digit_loop
 
+	li $v0, 1
+	move $a0, $t9
+	syscall		#prints sum of the decimal value
+
 
 
 	jr $ra	
