@@ -45,6 +45,18 @@ dont_incr_num_of_characters:
 dont_count_space:
 
 
+	move $s0, $t1		#set previous character with current one
+	addi $t0, $t0, 1	#incremented the address
+	addi $t2, $t2, 1	#incremented i
+	lb $t1, 0($t0)		#got the next character
+	bne $t1, $t6, loop	#loops when the next char is not a new line
+
+	li $t1, 4
+	ble $t5, $t1, dont_print_too_long 	#checks if user input is greater than 4
+
+dont_print_too_long:
+
+
 
 
 	jr $ra
