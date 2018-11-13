@@ -20,5 +20,10 @@ main:
 	li $t6, 0x0A	#loaded new line here
 	li $t7, 0	#number of spaces in front( used for during calculation)
 
+loop:
+	lb $t1, 0($t0)		#got a character of the string
+
+	beq $t1, $t3, dont_print_invalid_spaces		#if the character is not a space and
+	bne $s0, $t3, dont_print_invalid_spaces		#if the previous character is a space and
 	
 	jr $ra
