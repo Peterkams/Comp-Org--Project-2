@@ -22,6 +22,7 @@ main:
 
 loop:
 	lb $t1, 0($t0)		#got a character of the string
+	beq $t1, $t6, break_loop	#break when the current character is a newline
 
 	beq $t1, $t3, dont_print_invalid_spaces		#if the character is not a space and
 	bne $s0, $t3, dont_print_invalid_spaces		#if the previous character is a space and
@@ -47,8 +48,8 @@ dont_count_space:
 	move $s0, $t1		#set previous character with current one
 	addi $t0, $t0, 1	#incremented the address
 	addi $t2, $t2, 1	#incremented i
-	lb $t1, 0($t0)		#got the next character
-	bne $t1, $t6, loop	#loops when the next char is not a new line
+	j loop
+break_loop:
 
 	li $t1, 4
 	ble $t5, $t1, dont_print_too_long 	#checks if user input is greater than 4
