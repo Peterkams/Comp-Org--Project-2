@@ -106,6 +106,10 @@ dont_convert_lowercase_letter_to_digit:
 	addi $t8, $s1, -48	#got the decimal value of the capital letter
 dont_convert_digit_to_digit:
 
+	li $s4, -1
+	bne $t8, $s4, dont_print_invalid_symbol
+	li $v0, 4
+	la $a0, invalid_spaces
 
 
 	mul $s2, $t8, $t4 	#value = digit * power_of_36
