@@ -80,7 +80,7 @@ dont_print_empty_string_error:
 	li $s3, 36	#constant of 36
 
 convert_next_digit_loop:
-
+	li $t8, -1	#initialized the digit to -1
 	lb $s1, 0($s0)	
 	li $t2, 65	#smallest ascii value for capital letters
 	li $t3, 90	#biggest ascii value for capital letters
