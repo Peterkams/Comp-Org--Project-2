@@ -8,7 +8,7 @@ empty_string_error: .asciiz "Input is empty."
 .globl main
 
 main:
-	li $v0, 8
+	li $v0, 8	#takes user input
 	la $a0, my_string
 	syscall
 
@@ -106,11 +106,13 @@ dont_convert_lowercase_letter_to_digit:
 	addi $t8, $s1, -48	#got the decimal value of the capital letter
 dont_convert_digit_to_digit:
 
-	li $s4, -1
-	bne $t8, $s4, dont_print_invalid_symbol
+	li $s4, -1	#initialized -1 in $s4
+	bne $t8, $s4, dont_print_invalid_symbol	#if $t8 is -1 then print invalid_spaces 
 	li $v0, 4
-	la $a0, invalid_spaces
-
+	la $a0, invalid_spaces 
+	syscall
+	jr $ra
+dont_print_invalid_symbol:
 
 	mul $s2, $t8, $t4 	#value = digit * power_of_36
 	mul $t4, $t4, $s3	#power_of_base *= 36
